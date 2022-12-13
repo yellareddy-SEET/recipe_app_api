@@ -20,4 +20,4 @@ jobs:
       - name: Link
         run: docker-compose run --rm app sh -c "flake8"
 
-one=1
+one = 1
