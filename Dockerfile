@@ -1,5 +1,5 @@
 FROM python:3.9-alpine3.13
-LABEL maintainer=".com"
+LABEL maintainer="londonappdeveloper.com"
 
 ENV PYTHONUNBUFFERED 1
 
@@ -14,12 +14,12 @@ RUN python -m venv /py && \
     /py/bin/pip install --upgrade pip && \
     /py/bin/pip install -r /tmp/requirements.txt && \
     if [ $DEV = "true" ]; \
-        then  /py/bin/pip install -r /tmp/requirements.dev.txt ; \
+        then /py/bin/pip install -r /tmp/requirements.dev.txt ; \
     fi && \
     rm -rf /tmp && \
     adduser \
         --disabled-password \
-        --n==create-home \
+        --no-create-home \
         django-user
 
 ENV PATH="/py/bin:$PATH"

@@ -3,7 +3,7 @@ version: "3.9"
 services:
   app:
     build:
-      context:
+      context: .
       args:
         - DEV=true
     ports:
@@ -12,4 +12,8 @@ services:
       - ./app:/app
     command: >
       sh -c "python manage.py runserver 0.0.0.0:8000"
+    
 
+
+
+    
